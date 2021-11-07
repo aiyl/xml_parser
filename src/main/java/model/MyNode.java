@@ -4,21 +4,27 @@ import java.util.ArrayList;
 
 public class MyNode {
     private String fileName;
-    private ArrayList<String> pathToFile = new ArrayList <String>();
+   //private ArrayList<MyNode> children = new ArrayList <MyNode>();
+    private MyFile pathToFile = null;
 
     public void setName(String name) {
         this.fileName = name;
     }
-
-    public void setPathToFile(ArrayList<String> pathToFile) {
+    public void setPathToFile(MyFile pathToFile){
         this.pathToFile = pathToFile;
     }
+
+    /*public void setChildren(ArrayList<MyNode> children) {
+        this.children = children;
+    }*/
+
 
     @Override
     public String toString() {
         return "MyNode{"+
                 "name'" + fileName + '\'' +
-                ", pathToFile" + pathToFile +
+                ", path To file" + pathToFile.getPath() +
                 '}';
     }
+
 }

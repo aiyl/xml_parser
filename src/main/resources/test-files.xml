@@ -275,7 +275,7 @@
                                 </child>
                             </children>
                         </child>
-                    </children>
+                    </children> //start fuck
                 </child>
                 <child is-file="true">
                     <name>file-694732612.xml</name>
@@ -467,7 +467,7 @@
             <name>dir-2096609034</name>
             <children>
                 <child is-file="false">
-                    <name>dir-876155196</name>
+                    <name>dir-876155196</name> //левая папка
                     <children>
                         <child is-file="true">
                             <name>file-1192777699.txt</name>
@@ -734,7 +734,7 @@
                             <name>dir-1997164768</name>
                             <children>
                                 <child is-file="true">
-                                    <name>file-1894261883.java</name>
+                                    <name>file-1894261883.java</name> // нужный файл
                                 </child>
                                 <child is-file="true">
                                     <name>file-1346336554.txt</name>
