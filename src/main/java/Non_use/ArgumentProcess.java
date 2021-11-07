@@ -1,8 +1,10 @@
+package Non_use;
+
 import java.io.File;
 import java.io.IOException;
 
 public class ArgumentProcess {
-    /*public ArgumentProcess(String[] args) throws ArgumentException, IOException {
+    /*public Non_use.ArgumentProcess(String[] args) throws Non_use.ArgumentException, IOException {
         validator(args);
         storeParams(args);
     }*/
