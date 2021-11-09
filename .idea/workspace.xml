@@ -11,6 +11,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -28,7 +29,7 @@
   <component name="ProjectId" id="20CFqevxyrSM31I8DIrZUoLyo7Y" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sax-xml-parser-dev" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -58,6 +59,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="xmlParser" />
+      <option name="PROGRAM_PARAMETERS" value="-f src/main/resources/test-files.xml -s input " />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -69,6 +71,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.MySaxParser" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />

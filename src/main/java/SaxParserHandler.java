@@ -1,3 +1,7 @@
+import comporator.FullSearch;
+import comporator.RegularSearch;
+import comporator.Searcher;
+import comporator.SimpleSearch;
 import model.MyFile;
 import model.MyNode;
 import model.XConstant;
@@ -14,12 +18,12 @@ public class SaxParserHandler extends DefaultHandler {
     private ArrayList<MyNode> nodes = new ArrayList<>();
     private String currFolder = "";
 
-    public MyNode getMyNode(){
-        return myNode;
-    }
+    private FullSearch fullSearch = new FullSearch();
+    private SimpleSearch simpleSearch = new SimpleSearch();
+    private RegularSearch regularSearch = new RegularSearch();
 
     public ArrayList<MyNode> getNodes() {
-        return null;
+        return nodes;
     }
 
     private String getParent(){
@@ -59,11 +63,13 @@ public class SaxParserHandler extends DefaultHandler {
             myFile = new MyFile();
             myFile.setPath(currFolder);
             myNode = new MyNode();
-            myNode.setName(name);
-            myNode.setPathToFile(myFile);
-
-            nodes.add(myNode);
-            System.out.println(myNode.toString());
+            //if (fullSearch.Search(name)) {
+            if (regularSearch.Search(name)) {
+                myNode.setName(name);
+                myNode.setPathToFile(myFile);
+                nodes.add(myNode);
+            }
+            //System.out.println(myNode.toString());
         }
     }
 
@@ -72,7 +78,6 @@ public class SaxParserHandler extends DefaultHandler {
 
         if (qName.equals(XConstant.CHILDREN_NODE)){
             currFolder = this.getParent();
-//            System.out.println("Check get PARENT" +currFolder);
         }
         if(currentTagName == null){
             return;
