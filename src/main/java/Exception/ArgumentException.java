@@ -1,4 +1,4 @@
-package Non_use;
+package Exception;
 
 public class ArgumentException extends RuntimeException{
     public ArgumentException(String message) {

@@ -1,3 +1,4 @@
+import comporator.Searcher;
 import model.MyNode;
 import org.xml.sax.SAXException;
 
@@ -10,13 +11,15 @@ import java.util.ArrayList;
 
 public class MySaxParser {
     private String xml_file_path;
+    private Searcher startSearch;
     MySaxParser(ArgumentProcess args){
         this.xml_file_path = args.getFile_path();
+        this.startSearch = args.getSearchFromParamsStore();
     }
 
     public ArrayList<MyNode> parse(){
         SAXParserFactory factory = SAXParserFactory.newInstance();
-        SaxParserHandler handler = new SaxParserHandler();
+        SaxParserHandler handler = new SaxParserHandler(startSearch);
         SAXParser parser = null;
         try {
             parser = factory.newSAXParser();

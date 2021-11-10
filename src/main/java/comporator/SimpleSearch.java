@@ -1,11 +1,9 @@
 package comporator;
 
-import model.SearchType;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class SimpleSearch extends Searcher{
+public class SimpleSearch extends Searcher {
     private String inputMask = super.getInputMask();
     @Override
     public boolean Search(String fileName) {

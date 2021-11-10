@@ -1,7 +1,5 @@
 package comporator;
 
-import model.SearchType;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

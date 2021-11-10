@@ -1,7 +1,4 @@
-import comporator.FullSearch;
-import comporator.RegularSearch;
 import comporator.Searcher;
-import comporator.SimpleSearch;
 import model.MyFile;
 import model.MyNode;
 import model.XConstant;
@@ -17,10 +14,12 @@ public class SaxParserHandler extends DefaultHandler {
     private boolean isFile = false;
     private ArrayList<MyNode> nodes = new ArrayList<>();
     private String currFolder = "";
+    private Searcher startSearch;
 
-    private FullSearch fullSearch = new FullSearch();
-    private SimpleSearch simpleSearch = new SimpleSearch();
-    private RegularSearch regularSearch = new RegularSearch();
+//    private RegularSearch regularSearch = new RegularSearch();
+    public SaxParserHandler(Searcher startSearch){
+        this.startSearch = startSearch;
+    }
 
     public ArrayList<MyNode> getNodes() {
         return nodes;
@@ -45,6 +44,7 @@ public class SaxParserHandler extends DefaultHandler {
         }
 
     }
+
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
         String name = new String(ch, start, length);
@@ -63,13 +63,11 @@ public class SaxParserHandler extends DefaultHandler {
             myFile = new MyFile();
             myFile.setPath(currFolder);
             myNode = new MyNode();
-            //if (fullSearch.Search(name)) {
-            if (regularSearch.Search(name)) {
+            if (startSearch.Search(name)) {
                 myNode.setName(name);
                 myNode.setPathToFile(myFile);
                 nodes.add(myNode);
             }
-            //System.out.println(myNode.toString());
         }
     }
 

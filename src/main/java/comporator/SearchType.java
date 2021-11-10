@@ -1,8 +1,8 @@
-package model;
+package comporator;
 
 public enum SearchType {
+    Simple,
     Full,
-    Eqals,
-    Mask,
     Regular
+
 }
