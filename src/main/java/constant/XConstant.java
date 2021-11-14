@@ -1,4 +1,4 @@
-package model;
+package constant;
 
 public class XConstant {
     public static final String KEY_INPUT_FILE = "-f";
@@ -12,4 +12,13 @@ public class XConstant {
     public static final String SPLIT_DIR = "/";
     public static final String APOSTROPHE1 = "‘";
     public static final String APOSTROPHE2 = "’";
+
+    public enum SearchType {
+        Equals, // конкретный файл
+        Full, // ввесь список файлов
+        Regular, //регулярные выражения
+        Mask // расширешие
+    }
+
 }
+

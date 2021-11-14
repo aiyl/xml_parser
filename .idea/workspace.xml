@@ -33,22 +33,22 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\download\xmlParser\src\main\resources" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="comporator" />
       <recent name="comporator\factory\" />
       <recent name="comporator\factory" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\download\xmlParser\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -64,16 +64,18 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jdk-11.0.2" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="xmlParser" />
-      <option name="PROGRAM_PARAMETERS" value="-f src/main/resources/test-files.xml -s '*.xml' " />
+      <option name="PROGRAM_PARAMETERS" value="-f src/main/resources/test-files.xml -s *.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="MySaxParser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MySaxParser" />
+      <option name="MAIN_CLASS_NAME" value="Parser.MySaxParser" />
       <module name="xmlParser" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -85,7 +87,6 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.MySaxParser" />
       </list>
     </recent_temporary>
@@ -125,28 +126,10 @@
           <properties field="inputMask" class="comporator.Searcher" />
           <option name="timeStamp" value="12" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/comporator/Searcher.java</url>
-          <line>7</line>
-          <properties class="comporator.Searcher" method="setInputMask">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/comporator/Searcher.java</url>
-          <line>9</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/comporator/ParamsStore.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/comporator/ParamsStore.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="17" />
+          <url>file://$PROJECT_DIR$/src/main/java/arguments/ArgumentProcess.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

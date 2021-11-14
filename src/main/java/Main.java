@@ -1,13 +1,19 @@
-import model.MyNode;
+import Parser.MySaxParser;
+import arguments.ArgumentProcess;
+import comporator.SearchFactoryBuilder;
+import comporator.Searcher;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class Main {
     public static void main (String[] args) throws IOException {
         ArgumentProcess argumentProcess = new ArgumentProcess(args);
-        MySaxParser parser = new MySaxParser(argumentProcess);
-        ArrayList<MyNode> nodes = parser.parse();
-        System.out.println(nodes.toString());
+
+        SearchFactoryBuilder searchFactoryBuilder = new SearchFactoryBuilder();
+        Searcher searcher = searchFactoryBuilder.getSearcher(argumentProcess.getSearchType());
+        searcher.setInputMask(argumentProcess.getInput());
+
+        MySaxParser parser = new MySaxParser(argumentProcess.getFile_path(), searcher);
+        parser.parse();
     }
 }

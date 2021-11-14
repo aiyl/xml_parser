@@ -1,29 +1,23 @@
+package Parser;
+
 import comporator.Searcher;
-import model.MyFile;
-import model.MyNode;
-import model.XConstant;
+import constant.XConstant;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
-import java.util.ArrayList;
 
 public class SaxParserHandler extends DefaultHandler {
     private  String currentTagName;
-    private MyFile myFile;
+    private String myFile;
     private MyNode myNode = null;
     private boolean isFile = false;
-    private ArrayList<MyNode> nodes = new ArrayList<>();
     private String currFolder = "";
     private Searcher startSearch;
 
-//    private RegularSearch regularSearch = new RegularSearch();
     public SaxParserHandler(Searcher startSearch){
         this.startSearch = startSearch;
     }
 
-    public ArrayList<MyNode> getNodes() {
-        return nodes;
-    }
 
     private String getParent(){
         String str = currFolder.substring(0, currFolder.lastIndexOf(XConstant.SPLIT_DIR));
@@ -60,13 +54,13 @@ public class SaxParserHandler extends DefaultHandler {
         }
 
         if(currentTagName.equals(XConstant.ACTIVE_NODE) && isFile){
-            myFile = new MyFile();
-            myFile.setPath(currFolder);
+            myFile = currFolder;
             myNode = new MyNode();
             if (startSearch.Search(name)) {
                 myNode.setName(name);
                 myNode.setPathToFile(myFile);
-                nodes.add(myNode);
+                System.out.println(myNode.toString());
+                //nodes.add(myNode);
             }
         }
     }

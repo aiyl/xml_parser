@@ -1,28 +1,30 @@
+package arguments;
+
 import Exception.ArgumentException;
-import comporator.ParamsStore;
-import comporator.SearchType;
-import comporator.Searcher;
-import model.XConstant;
+import constant.XConstant.SearchType;
+import constant.XConstant;
 import java.io.File;
-import java.io.IOException;
 
 public class ArgumentProcess {
     private String file_path, input;
     private SearchType searchType;
-    private ParamsStore paramsStore;
+    //private final Options options;
 
-    public ArgumentProcess(String[] args) throws ArgumentException, IOException {
+    public  ArgumentProcess(String[] args) throws ArgumentException{
+        validator(args);
+    }
+
+    private void validator(String[] args){
         switch (args.length){
             case 2:
                 this.file_path = fileExists(args[1]);
-                paramsStore = new ParamsStore(file_path);
+                searchType = SearchType.Full;
                 break;
             case 4:
                 this.file_path = fileExists(args[1]);
                 if (maskTypeExist(args[2])){
                     this.input = args[3];
                     this.searchType = searchType(args[2], args[3]);
-                    paramsStore = new ParamsStore(searchType, input, file_path);
                 }
                 break;
             default:
@@ -30,20 +32,14 @@ public class ArgumentProcess {
         }
     }
 
-    public Searcher getSearchFromParamsStore() {
-        return paramsStore.getSearcher();
-    }
 
-    public String getFile_path() {
-        return file_path;
-    }
 
     private SearchType searchType(String key, String input){
         if(key.equals(XConstant.KEY_MACK) ){
             if(input.contains("file"))
-                return SearchType.Full;
+                return SearchType.Equals;
             if(input.contains("*"))
-                return  SearchType.Simple;
+                return  SearchType.Mask;
         }
         else {
             return SearchType.Regular;
@@ -58,7 +54,7 @@ public class ArgumentProcess {
             throw new ArgumentException("not supported key: " + s);
     }
 
-    private String fileExists(String fileName) throws ArgumentException, IOException {
+    private String fileExists(String fileName) throws ArgumentException{
         String path = System.getProperty("user.dir");
         File f = new File(path + File.separator + fileName);
         if(f.exists() && f.isFile()){
@@ -67,5 +63,17 @@ public class ArgumentProcess {
             throw new ArgumentException("input file doesn't exists");
         }
 
+    }
+
+    public String getFile_path() {
+        return file_path;
+    }
+
+    public SearchType getSearchType() {
+        return searchType;
+    }
+
+    public String getInput() {
+        return input;
     }
 }
