@@ -1,6 +1,6 @@
 package Parser;
 
-public class MyNode {
+public class Node {
     private String fileName;
     private String pathToFile = null;
 
@@ -14,8 +14,7 @@ public class MyNode {
 
     @Override
     public String toString() {
-        return  pathToFile + '\'' +
-                fileName + '\'' + "\n";
+        return  pathToFile + fileName + "\n";
     }
 
 }

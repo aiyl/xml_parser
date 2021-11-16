@@ -1,4 +1,4 @@
-import Parser.MySaxParser;
+import Parser.SaxParser;
 import arguments.ArgumentProcess;
 import comporator.SearchFactoryBuilder;
 import comporator.Searcher;
@@ -13,7 +13,7 @@ public class Main {
         Searcher searcher = searchFactoryBuilder.getSearcher(argumentProcess.getSearchType());
         searcher.setInputMask(argumentProcess.getInput());
 
-        MySaxParser parser = new MySaxParser(argumentProcess.getFile_path(), searcher);
+        SaxParser parser = new SaxParser(argumentProcess.getFile_path(), searcher);
         parser.parse();
     }
 }

@@ -9,7 +9,7 @@ import org.xml.sax.helpers.DefaultHandler;
 public class SaxParserHandler extends DefaultHandler {
     private  String currentTagName;
     private String myFile;
-    private MyNode myNode = null;
+    private Node node = null;
     private boolean isFile = false;
     private String currFolder = "";
     private Searcher startSearch;
@@ -55,12 +55,11 @@ public class SaxParserHandler extends DefaultHandler {
 
         if(currentTagName.equals(XConstant.ACTIVE_NODE) && isFile){
             myFile = currFolder;
-            myNode = new MyNode();
             if (startSearch.Search(name)) {
-                myNode.setName(name);
-                myNode.setPathToFile(myFile);
-                System.out.println(myNode.toString());
-                //nodes.add(myNode);
+                node = new Node();
+                node.setName(name);
+                node.setPathToFile(myFile);
+                System.out.println(node.toString());
             }
         }
     }

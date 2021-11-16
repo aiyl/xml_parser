@@ -36,10 +36,10 @@ public class ArgumentProcess {
 
     private SearchType searchType(String key, String input){
         if(key.equals(XConstant.KEY_MACK) ){
-            if(input.contains("file"))
-                return SearchType.Equals;
             if(input.contains("*"))
                 return  SearchType.Mask;
+            if(input.contains("file"))
+                return SearchType.Equals;
         }
         else {
             return SearchType.Regular;

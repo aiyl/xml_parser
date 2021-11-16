@@ -8,7 +8,7 @@ target/
 .idea/
 # Log file
 *.log
-
+*.iml
 # BlueJ files
 *.ctxt
 
