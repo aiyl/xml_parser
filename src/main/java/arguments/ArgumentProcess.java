@@ -60,7 +60,7 @@ public class ArgumentProcess {
         if(f.exists() && f.isFile()){
             return f.getAbsolutePath();
         }else{
-            throw new ArgumentException("input file doesn't exists");
+            throw new ArgumentException("input file doesn't exists " + fileName);
         }
 
     }
