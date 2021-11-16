@@ -10,7 +10,7 @@
     - поиск по регулярному выражению `java -jar assignment.jar -f test-files.xml -S .*?[a-z]{4}-\\d+\.[a-z]+` <br>
  <br>
 Пример xml файла
----
+
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/9rsfkwv/image.png" alt="image" border="0"></a> <br>
 Примеры запросов
 ---
