@@ -8,7 +8,6 @@ import java.io.File;
 public class ArgumentProcess {
     private String file_path, input;
     private SearchType searchType;
-    //private final Options options;
 
     public  ArgumentProcess(String[] args) throws ArgumentException{
         validator(args);

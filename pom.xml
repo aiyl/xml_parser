@@ -30,6 +30,7 @@
     </properties>
 
     <build>
+        <finalName>assignment</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -48,8 +49,12 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>xmlParser.Main</mainClass>
+                            <mainClass>Main</mainClass>
+                            <classpathLayoutType>simple</classpathLayoutType>>
                         </manifest>
+                        <manifestEntries>
+                            <Version>${project.version}</Version>
+                        </manifestEntries>
                     </archive>
                 </configuration>
             </plugin>

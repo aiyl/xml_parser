@@ -1,9 +1,7 @@
 package Parser;
 
 import comporator.*;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 class SaxParserHandlerTest {
     private String path = System.getProperty("user.dir");
@@ -37,7 +35,7 @@ class SaxParserHandlerTest {
     @Test
     void regularSearchTest (){
         Searcher regularSearch = new RegularSearch();
-        regularSearch.setInputMask(".*?[a-z]{4}-\\d+.[a-z]");
+        regularSearch.setInputMask(".*?[a-z]{4}-\\d+.[a-z]+");
         SaxParser parser = new SaxParser(xml_file, regularSearch);
         parser.parse();
     }

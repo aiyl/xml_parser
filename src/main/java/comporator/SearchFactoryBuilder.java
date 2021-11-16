@@ -3,7 +3,7 @@ import Exception.ArgumentException;
 import constant.XConstant;
 
 public class SearchFactoryBuilder {
-    public static   Searcher getSearcher(XConstant.SearchType type){
+    public Searcher getSearcher(XConstant.SearchType type){
         switch (type){
             case Full: return new FullSearch();
             case Regular: return new RegularSearch();
