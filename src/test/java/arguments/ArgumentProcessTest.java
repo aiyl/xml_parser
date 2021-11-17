@@ -1,5 +1,4 @@
 package arguments;
-import Exception.ArgumentException;
 import constant.XConstant;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;

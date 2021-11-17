@@ -14,7 +14,7 @@ public class Node {
 
     @Override
     public String toString() {
-        return  pathToFile + fileName + "\n";
+        return  pathToFile + fileName;
     }
 
 }

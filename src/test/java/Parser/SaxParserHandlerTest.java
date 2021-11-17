@@ -27,7 +27,7 @@ class SaxParserHandlerTest {
     @Test
     void maskSearchTest(){
         Searcher maskSearch = new MaskSearch();
-        maskSearch.setInputMask("*.txt");
+        maskSearch.setInputMask("*.java");
         SaxParser parser = new SaxParser(xml_file, maskSearch);
         parser.parse();
     }
